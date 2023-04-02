@@ -39,8 +39,8 @@ exports.getAllCharacters = async (req, res) => {
           .text();
 
         names = names
-          .replace(/(Build|build)/g, '')
-          .split(' ')
+          .replace(/( Build| build)/g, ',')
+          .split(',')
           .slice(0, -1);
 
         info.push({
