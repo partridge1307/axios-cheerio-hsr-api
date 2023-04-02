@@ -88,7 +88,7 @@ exports.getCharacterInfo = async (req, res) => {
             data.push({ category, details });
           });
 
-        result.stats = [context, data];
+        result.stats = { context, data };
       } else if (i === 1) {
         const context = $(el).find('.stat-box > h5').text();
 
@@ -102,7 +102,7 @@ exports.getCharacterInfo = async (req, res) => {
             data.push({ item, cost });
           });
 
-        result.materials = [context, data];
+        result.materials = { context, data };
       }
     });
 
