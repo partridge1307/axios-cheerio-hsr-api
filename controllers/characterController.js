@@ -108,9 +108,7 @@ exports.getCharacterInfo = async (req, res) => {
 
     res.status(200).json({
       status: 'success',
-      data: {
-        result,
-      },
+      data: result,
     });
   } catch (error) {
     res.status(400).json({
