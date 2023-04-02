@@ -85,10 +85,10 @@ exports.getCharacterInfo = async (req, res) => {
             const category = $(element).find('.hsr-stat > span').text();
             const details = $(element).find('.details').text();
 
-            data.push({ context, category, details });
+            data.push({ category, details });
           });
 
-        result.stats = data;
+        result.stats = [context, data];
       } else if (i === 1) {
         const context = $(el).find('.stat-box > h5').text();
 
@@ -99,10 +99,10 @@ exports.getCharacterInfo = async (req, res) => {
             const item = $(element).find('.hsr-name > span').text();
             let cost = $(element).text().split(/ +/).pop();
 
-            data.push({ context, item, cost });
+            data.push({ item, cost });
           });
 
-        result.materials = data;
+        result.materials = [context, data];
       }
     });
 
